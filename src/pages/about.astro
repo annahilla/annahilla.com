@@ -8,7 +8,7 @@ import { skills } from "../constants/skills";
 ---
 
 <Layout>
-  <Section>
+  <Section animation="section-reveal from-right">
     <div class="flex flex-col gap-4 items-start w-full">
       <Title>About me</Title>
       <div class="flex flex-col gap-20 items-center md:flex-row">
@@ -40,24 +40,25 @@ import { skills } from "../constants/skills";
           alt="Anna Hilla picture presenting project on the computer"
         />
       </div>
+    </div>
+  </Section>
+  <Section animation="section-reveal from-left">
+    <div class="flex flex-col gap-8">
+      <Title>Skills</Title>
 
-      <div class="mt-10 flex flex-col gap-8">
-        <Title>Skills</Title>
+      <Text
+        >I enjoy working with modern tools and frameworks to create responsive
+        and engaging web experiences:
+      </Text>
 
-        <Text
-          >I enjoy working with modern tools and frameworks to create responsive
-          and engaging web experiences:
-        </Text>
-
-        <div class="flex flex-wrap gap-1 w-full">
-          {
-            skills.map((skill) => (
-              <div class="w-full uppercase tracking-widest bg-dark text-white dark:bg-white dark:text-dark py-2 px-12 flex items-center justify-center text-sm md:w-auto">
-                <p>{skill.name}</p>
-              </div>
-            ))
-          }
-        </div>
+      <div class="flex flex-wrap gap-1 w-full">
+        {
+          skills.map((skill) => (
+            <div class="w-full uppercase tracking-widest bg-dark text-white dark:bg-white dark:text-dark py-2 px-12 flex items-center justify-center text-sm md:w-auto">
+              <p>{skill.name}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
   </Section>

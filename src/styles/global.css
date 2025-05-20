@@ -6,3 +6,22 @@
     --font-poppins: Poppins, sans-serif;
     --font-poly: Poly, serif;
 }
+
+.section-reveal {
+  opacity: 0;
+  transform: translateX(0);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.section-reveal.from-left {
+  transform: translateX(-50px);
+}
+
+.section-reveal.from-right {
+  transform: translateX(50px);
+}
+
+.section-reveal.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
