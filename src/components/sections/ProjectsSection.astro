@@ -4,6 +4,7 @@ import Title from "../ui/Title.astro";
 import Text from "../ui/Text.astro";
 import { projects } from "../../constants/projects";
 import Button from "../ui/Button.astro";
+import LinkButton from "../ui/LinkButton.astro";
 ---
 
 <Section>
@@ -35,7 +36,7 @@ import Button from "../ui/Button.astro";
     </div>
 
     <div class="flex items-center justify-center w-full mt-6">
-      <Button> More </Button>
+      <LinkButton link="/projects">More</LinkButton>
     </div>
   </div>
 </Section>

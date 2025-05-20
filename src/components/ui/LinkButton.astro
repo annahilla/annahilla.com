@@ -1,7 +1,9 @@
 ---
 import { buttonStyles } from "../../constants/consts";
+
+const { link } = Astro.props;
 ---
 
-<button class={buttonStyles}>
+<a href={link} class={buttonStyles}>
   <slot />
-</button>
+</a>
