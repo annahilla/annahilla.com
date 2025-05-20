@@ -1,5 +1,6 @@
 ---
 import { githubLink } from "../../constants/consts";
+import Logo from "../Logo.astro";
 import NavbarItem from "./NavbarItem.astro";
 ---
 
@@ -9,9 +10,7 @@ import NavbarItem from "./NavbarItem.astro";
   <NavbarItem>Projects</NavbarItem>
   <NavbarItem>About</NavbarItem>
 
-  <a href="/">
-    <img width={150} src="/public/logo.svg" alt="Anna Hilla Logo" />
-  </a>
+  <Logo />
 
   <NavbarItem link={githubLink} target="_blank">Github</NavbarItem>
   <NavbarItem>Contact</NavbarItem>

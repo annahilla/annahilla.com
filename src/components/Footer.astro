@@ -1,0 +1,25 @@
+---
+import { githubLink, linkedinLink, mail } from "../constants/consts";
+import Logo from "./Logo.astro";
+import Section from "./ui/Section.astro";
+import Text from "./ui/Text.astro";
+---
+
+<Section>
+  <div class="flex flex-col gap-4 items-center justify-center">
+    <Logo />
+    <Text> © Copyright 2025 · All rights reserved</Text>
+
+    <div class="flex gap-8 items-center mt-4">
+      <a href={githubLink} target="_blank">
+        <img src="/github-logo.svg" alt="Github Logo" />
+      </a>
+      <a href={linkedinLink} target="_blank">
+        <img src="/linkedin-logo.svg" alt="Linkedin Logo" />
+      </a>
+      <a href={`mailto:${mail}`}>
+        <img src="/mail.svg" alt="Mail" />
+      </a>
+    </div>
+  </div>
+</Section>
