@@ -1,0 +1,9 @@
+---
+const { link, target } = Astro.props;
+---
+
+<li class="cursor-pointer hover:opacity-70">
+  <a href={link} target={target}>
+    <slot />
+  </a>
+</li>

@@ -1,0 +1,18 @@
+---
+import { githubLink } from "../constants/consts";
+import NavbarItem from "./NavbarItem.astro";
+---
+
+<ul
+  class="uppercase flex justify-between py-8 px-20 border-b tracking-[0.3rem]"
+>
+  <NavbarItem>Projects</NavbarItem>
+  <NavbarItem>About</NavbarItem>
+
+  <a href="/">
+    <img width={150} src="/public/logo.svg" alt="Anna Hilla Logo" />
+  </a>
+
+  <NavbarItem link={githubLink} target="_blank">Github</NavbarItem>
+  <NavbarItem>Contact</NavbarItem>
+</ul>
