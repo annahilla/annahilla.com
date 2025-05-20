@@ -1,0 +1,64 @@
+---
+import Section from "../components/ui/Section.astro";
+import Title from "../components/ui/Title.astro";
+import Layout from "../layouts/Layout.astro";
+import Text from "../components/ui/Text.astro";
+import picture from "../assets/picture.jpeg";
+import { skills } from "../constants/skills";
+---
+
+<Layout>
+  <Section>
+    <div class="flex flex-col gap-4 items-start w-full">
+      <Title>About me</Title>
+      <div class="flex gap-20 items-center">
+        <div class="flex flex-col gap-4">
+          <Text>
+            I'm Anna, a Frontend Web Developer based in Barcelona. I specialize
+            in React and Next.js, but I also enjoy working with a variety of
+            other tools and technologies.
+          </Text>
+
+          <Text>
+            I'm passionate about learning and love exploring a wide range of
+            interests — from cooking to web development. My goal is to build
+            clean, user-friendly web applications and collaborate with great
+            teams on meaningful projects. With a background in nursing, I'm
+            especially drawn to creating apps that promote health and
+            well-being.
+          </Text>
+
+          <Text>
+            I spent two years teaching myself programming before enrolling in a
+            React-focused Bootcamp to deepen and professionalize my skills.
+          </Text>
+        </div>
+
+        <img
+          width={400}
+          src={picture.src}
+          alt="Anna Hilla picture presenting project on the computer"
+        />
+      </div>
+
+      <div class="mt-10 flex flex-col gap-8">
+        <Title>Skills</Title>
+
+        <Text
+          >I enjoy working with modern tools and frameworks to create responsive
+          and engaging web experiences:
+        </Text>
+
+        <div class="flex flex-wrap gap-1">
+          {
+            skills.map((skill) => (
+              <div class="uppercase tracking-widest bg-dark text-white dark:bg-white dark:text-dark py-2 px-12 flex items-center justify-center text-sm">
+                <p>{skill.name}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </Section>
+</Layout>

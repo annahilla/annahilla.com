@@ -4,14 +4,12 @@ import Logo from "../Logo.astro";
 import NavbarItem from "./NavbarItem.astro";
 ---
 
-<ul
-  class="uppercase flex justify-between py-8 px-20 border-b tracking-[0.3rem]"
->
-  <NavbarItem>Projects</NavbarItem>
-  <NavbarItem>About</NavbarItem>
+<ul class="uppercase flex justify-between py-8 px-20 tracking-[0.3rem]">
+  <NavbarItem link="/projects">Projects</NavbarItem>
+  <NavbarItem link="/about">About</NavbarItem>
 
   <Logo />
 
   <NavbarItem link={githubLink} target="_blank">Github</NavbarItem>
-  <NavbarItem>Contact</NavbarItem>
+  <NavbarItem link="/contact">Contact</NavbarItem>
 </ul>

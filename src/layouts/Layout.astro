@@ -16,9 +16,11 @@ import Footer from "../components/Footer.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Anna Hilla · Frontend Web Developer</title>
   </head>
-  <body class="bg-beige font-poppins dark:bg-dark">
+  <body class="flex flex-col bg-beige font-poppins dark:bg-dark min-h-screen">
     <Navbar />
-    <slot />
+    <main class="flex-1">
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
