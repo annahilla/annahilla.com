@@ -1,0 +1,41 @@
+---
+import Section from "../ui/Section.astro";
+import Title from "../ui/Title.astro";
+import Text from "../ui/Text.astro";
+import { projects } from "../../constants/projects";
+import Button from "../ui/Button.astro";
+---
+
+<Section>
+  <div class="flex flex-col gap-4 w-full items-start">
+    <Title>Projects</Title>
+    <Text>Check out my latest projects</Text>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
+      {
+        projects.map((project) => (
+          <a
+            class="relative group w-full overflow-hidden"
+            href={project.link}
+            target="_blank"
+          >
+            <img
+              src={project.src}
+              alt={`${project.name} Screenshot`}
+              class="w-full h-auto object-cover block"
+            />
+            <div class="absolute inset-0 bg-dark/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <p class="py-2 px-10 bg-white/70 tracking-widest uppercase text-center">
+                Go to site
+              </p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="flex items-center justify-center w-full mt-6">
+      <Button> More </Button>
+    </div>
+  </div>
+</Section>

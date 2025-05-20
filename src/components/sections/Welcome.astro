@@ -1,11 +1,12 @@
 ---
-import profile from "../assets/profile.png";
-import Title from "./ui/Title.astro";
-import Text from "./ui/Text.astro";
-import Button from "./ui/Button.astro";
+import profile from "../../assets/profile.png";
+import Title from "../ui/Title.astro";
+import Text from "../ui/Text.astro";
+import Button from "../ui/Button.astro";
+import Section from "../ui/Section.astro";
 ---
 
-<div class="flex items-center justify-center border-b py-15 gap-20">
+<Section>
   <img width={230} src={profile.src} alt="Anna Hilla Profile Picture" />
 
   <div class="w-[30rem] flex flex-col gap-8 items-start">
@@ -16,4 +17,4 @@ import Button from "./ui/Button.astro";
     </Text>
     <Button>More</Button>
   </div>
-</div>
+</Section>
