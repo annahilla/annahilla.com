@@ -60,20 +60,12 @@ export const skills = [
     logo: "https://img.shields.io/badge/Figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white"
   },
   {
-    name: "Vite",
-    logo: "https://img.shields.io/badge/Vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white"
-  },
-  {
     name: "Git",
     logo: "https://img.shields.io/badge/Git-%23F05032.svg?style=for-the-badge&logo=git&logoColor=white"
   },
   {
     name: "Redux",
     logo: "https://img.shields.io/badge/Redux-%23764ABC.svg?style=for-the-badge&logo=redux&logoColor=white"
-  },
-  {
-    name: "Storybook",
-    logo: "https://img.shields.io/badge/Storybook-%23FF4785.svg?style=for-the-badge&logo=storybook&logoColor=white"
   },
   {
     name: "Firebase",
@@ -95,8 +87,4 @@ export const skills = [
     name: "MongoDB",
     logo: "https://img.shields.io/badge/MongoDB-%2347A248.svg?style=for-the-badge&logo=mongodb&logoColor=white"
   },
-  {
-    name: "Postman",
-    logo: "https://img.shields.io/badge/Postman-%23FF6C37.svg?style=for-the-badge&logo=postman&logoColor=white"
-  }
 ];

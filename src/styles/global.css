@@ -7,6 +7,15 @@
     --font-poly: Poly, serif;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+
 .section-reveal {
   opacity: 0;
   transform: translateX(0);
@@ -25,3 +34,4 @@
   opacity: 1;
   transform: translateX(0);
 }
+
