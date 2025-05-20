@@ -1,0 +1,35 @@
+---
+import Button from "../ui/Button.astro";
+
+const inputStyles = "border py-2 px-4 w-full";
+---
+
+<form
+  class="flex flex-col gap-4 mt-4 w-full"
+  action="https://formsubmit.co/annahilla21@gmail.com"
+  method="POST"
+>
+  <div class="flex gap-4 w-2/3">
+    <input
+      type="text"
+      name="name"
+      placeholder="Name"
+      class={inputStyles}
+      required
+    />
+    <input
+      type="text"
+      name="email"
+      placeholder="Email"
+      class={inputStyles}
+      required
+    />
+  </div>
+  <textarea
+    name="message"
+    placeholder="Message"
+    class={`${inputStyles} h-46`}
+    required></textarea>
+
+  <Button>Send</Button>
+</form>
