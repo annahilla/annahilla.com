@@ -4,12 +4,40 @@ import Logo from "../Logo.astro";
 import NavbarItem from "./NavbarItem.astro";
 ---
 
-<ul class="uppercase flex justify-between py-8 px-20 tracking-[0.3rem]">
-  <NavbarItem link="/projects">Projects</NavbarItem>
-  <NavbarItem link="/about">About</NavbarItem>
+<div class="uppercase py-8 px-10 tracking-[0.3rem] md:px-20">
+  <ul class="justify-between hidden md:flex">
+    <NavbarItem link="/projects">Projects</NavbarItem>
+    <NavbarItem link="/about">About</NavbarItem>
+    <Logo />
+    <NavbarItem link={githubLink} target="_blank">Github</NavbarItem>
+    <NavbarItem link="/contact">Contact</NavbarItem>
+  </ul>
 
-  <Logo />
+  <div class="md:hidden flex justify-between items-center">
+    <Logo />
+    <button id="menu-toggle" aria-label="Open menu">
+      <img src="/menu-icon.svg" alt="Menu icon" class="w-6 h-6" />
+    </button>
+  </div>
 
-  <NavbarItem link={githubLink} target="_blank">Github</NavbarItem>
-  <NavbarItem link="/contact">Contact</NavbarItem>
-</ul>
+  <ul
+    id="mobile-menu"
+    class="flex mt-10 hidden flex-col items-center justify-center gap-8 mt-4 md:hidden uppercase tracking-[0.2rem] transition-all duration-300 ease-in-out"
+  >
+    <NavbarItem link="/projects">Projects</NavbarItem>
+    <NavbarItem link="/about">About</NavbarItem>
+    <NavbarItem link={githubLink} target="_blank">Github</NavbarItem>
+    <NavbarItem link="/contact">Contact</NavbarItem>
+  </ul>
+</div>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("mobile-menu");
+
+    toggle?.addEventListener("click", () => {
+      menu?.classList.toggle("hidden");
+    });
+  });
+</script>
