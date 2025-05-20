@@ -22,12 +22,14 @@ import NavbarItem from "./NavbarItem.astro";
 
   <ul
     id="mobile-menu"
-    class="flex mt-10 hidden flex-col items-center justify-center gap-8 mt-4 md:hidden uppercase tracking-[0.2rem] transition-all duration-300 ease-in-out"
+    class="md:hidden uppercase tracking-[0.2rem] transition-all duration-300 ease-in-out overflow-hidden max-h-0 opacity-0 pointer-events-none"
   >
-    <NavbarItem link="/projects">Projects</NavbarItem>
-    <NavbarItem link="/about">About</NavbarItem>
-    <NavbarItem link={githubLink} target="_blank">Github</NavbarItem>
-    <NavbarItem link="/contact">Contact</NavbarItem>
+    <div class="mt-8 flex flex-col items-center justify-center gap-8">
+      <NavbarItem link="/projects">Projects</NavbarItem>
+      <NavbarItem link="/about">About</NavbarItem>
+      <NavbarItem link={githubLink} target="_blank">Github</NavbarItem>
+      <NavbarItem link="/contact">Contact</NavbarItem>
+    </div>
   </ul>
 </div>
 
@@ -37,7 +39,7 @@ import NavbarItem from "./NavbarItem.astro";
     const menu = document.getElementById("mobile-menu");
 
     toggle?.addEventListener("click", () => {
-      menu?.classList.toggle("hidden");
+      menu?.classList.toggle("open");
     });
   });
 </script>
