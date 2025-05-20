@@ -1,45 +1,45 @@
-import project1 from "../assets/projects/project1.png";
-import project2 from "../assets/projects/project2.png";
-import project3 from "../assets/projects/project3.png";
-import project4 from "../assets/projects/project4.png";
-import project5 from "../assets/projects/project5.png";
-import project6 from "../assets/projects/project6.png";
+import expenseTracker from "../assets/projects/expense-tracker.png";
+import planutri from "../assets/projects/planutri.gif";
+import nissu from "../assets/projects/nissu.gif";
+import wellpulse from "../assets/projects/wellpulse.gif";
+import onboarding from "../assets/projects/onboarding.gif";
+import budgets from "../assets/projects/budgets.gif";
 
 export const projects = [
     {
         id: 1,
         name: "Nissu",
-        src: project1.src,
+        src: nissu.src,
         link: "https://nissu.app/"
     },
     {
         id: 2,
         name: "Planutri",
-        src: project2.src,
+        src: planutri.src,
         link: "https://planutri.vercel.app/"
     },
     {
         id: 3,
         name: "Wellpulse",
-        src: project3.src,
+        src: wellpulse.src,
         link: "https://wellpulse.vercel.app/"
     },
     {
         id: 4,
         name: "Budget Calculator",
-        src: project4.src,
+        src: budgets.src,
         link: "https://web-budget-calculator.vercel.app/"
     },
     {
         id: 5,
         name: "Digital Onboarding",
-        src: project5.src,
+        src: onboarding.src,
         link: "https://digital-onboarding.vercel.app/"
     },
     {
         id: 6,
         name: "Expense Tracker",
-        src: project6.src,
+        src: expenseTracker.src,
         link: "https://expense-tracker-sable-two.vercel.app/"
     },
 ]
