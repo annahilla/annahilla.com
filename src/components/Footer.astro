@@ -1,5 +1,8 @@
 ---
 import { githubLink, linkedinLink, mail } from "../constants/consts";
+import Github from "./icons/Github.astro";
+import Linkedin from "./icons/Linkedin.astro";
+import Mail from "./icons/Mail.astro";
 import Logo from "./Logo.astro";
 import Section from "./ui/Section.astro";
 ---
@@ -13,13 +16,13 @@ import Section from "./ui/Section.astro";
 
     <div class="flex gap-8 items-center mt-4">
       <a href={githubLink} target="_blank">
-        <img src="/github-logo.svg" alt="Github Logo" />
+        <Github />
       </a>
       <a href={linkedinLink} target="_blank">
-        <img src="/linkedin-logo.svg" alt="Linkedin Logo" />
+        <Linkedin />
       </a>
       <a href={`mailto:${mail}`}>
-        <img src="/mail.svg" alt="Mail" />
+        <Mail />
       </a>
     </div>
   </div>
