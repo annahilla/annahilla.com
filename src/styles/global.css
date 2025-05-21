@@ -21,7 +21,6 @@ html, body {
   pointer-events: auto;
 }
 
-
 .section-reveal {
   opacity: 0;
   transform: translateX(0);
@@ -39,5 +38,9 @@ html, body {
 .section-reveal.visible {
   opacity: 1;
   transform: translateX(0);
+}
+
+.clickable-hover {
+  @apply w-10 h-10;
 }
 

@@ -1,0 +1,37 @@
+<div
+  id="custom-cursor"
+  class="pointer-events-none fixed z-100 w-6 h-6 rounded-full bg-white mix-blend-difference transition-[width,height] duration-300 ease-in-out -translate-x-1/2 -translate-y-1/2"
+>
+</div>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cursor = document.getElementById("custom-cursor");
+
+    const storedPosition = sessionStorage.getItem("mousePosition");
+    if (storedPosition) {
+      const { x, y } = JSON.parse(storedPosition);
+      cursor.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
+    }
+
+    document.addEventListener("mousemove", (e) => {
+      const x = e.clientX + 10;
+      const y = e.clientY + 10;
+      cursor.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
+
+      sessionStorage.setItem("mousePosition", JSON.stringify({ x, y }));
+    });
+
+    const updateCursorState = (hovering) => {
+      cursor.classList.toggle("clickable-hover", hovering);
+    };
+
+    const clickableElements = document.querySelectorAll(
+      "a, button, [data-cursor='pointer']"
+    );
+    clickableElements.forEach((el) => {
+      el.addEventListener("mouseenter", () => updateCursorState(true));
+      el.addEventListener("mouseleave", () => updateCursorState(false));
+    });
+  });
+</script>
