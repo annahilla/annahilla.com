@@ -7,6 +7,7 @@ import "@fontsource/poly";
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import CirclePointer from "../components/CirclePointer.astro";
+import { description, previewImage, title, url } from "../constants/consts";
 ---
 
 <!doctype html>
@@ -14,6 +15,21 @@ import CirclePointer from "../components/CirclePointer.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta property="og:title" content={title} />
+    <meta name="description" content={description} />
+
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={url} />
+    <meta property="og:image" content={previewImage} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={previewImage} />
+
+    <link rel="canonical" href={url} />
+    <link rel="icon" href="/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Anna Hilla · Frontend Web Developer</title>
   </head>
