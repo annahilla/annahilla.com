@@ -1,0 +1,1 @@
+export const buttonStyles = "text-center uppercase border py-2 w-46 font-light tracking-[0.15rem]"
