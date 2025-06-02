@@ -16,5 +16,8 @@
     "lucide-astro": "^0.379.0",
     "resend": "^4.5.1",
     "tailwindcss": "^4.1.7"
+  },
+  "devDependencies": {
+    "@astrojs/vercel": "^8.0.4"
   }
 }
