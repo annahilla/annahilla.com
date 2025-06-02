@@ -6,7 +6,7 @@ const inputStyles = "border py-2 px-4 w-full";
 
 <form
   class="flex flex-col gap-4 mt-4 w-full"
-  action="https://formsubmit.co/annahilla21@gmail.com"
+  action="/api/contact"
   method="POST"
 >
   <div class="flex flex-col gap-4 w-full md:flex-row md:w-2/3">
@@ -31,5 +31,20 @@ const inputStyles = "border py-2 px-4 w-full";
     class={`${inputStyles} h-46`}
     required></textarea>
 
+  <p class="tracking-[0.15rem] italic" id="status-message"></p>
+
   <Button>Send</Button>
 </form>
+
+<script type="module">
+  const params = new URLSearchParams(window.location.search);
+  const sent = params.get("sent");
+  const p = document.getElementById("status-message");
+  if (sent === "true") {
+    p.textContent =
+      "Your message has been sent successfully! We'll get back to you soon.";
+  } else if (sent === "error") {
+    p.textContent =
+      "There was an error sending your message. Please try again later.";
+  }
+</script>
