@@ -2,6 +2,7 @@
 import { githubLink } from "../../constants/site";
 import Logo from "../Logo.astro";
 import NavbarItem from "./NavbarItem.astro";
+import HamburguerMenu from "../icons/HamburguerMenu.astro";
 ---
 
 <div class="uppercase py-8 px-10 tracking-[0.3rem] md:px-20">
@@ -15,9 +16,7 @@ import NavbarItem from "./NavbarItem.astro";
 
   <div class="md:hidden flex justify-between items-center">
     <Logo />
-    <button id="menu-toggle" aria-label="Open menu">
-      <img src="/menu-icon.svg" alt="Menu icon" class="w-6 h-6" />
-    </button>
+    <HamburguerMenu />
   </div>
 
   <ul
