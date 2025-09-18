@@ -1,0 +1,32 @@
+---
+import Section from "../../components/ui/Section.astro";
+import Title from "../../components/ui/Title.astro";
+import Text from "../../components/ui/Text.astro";
+import SkillsGrid from "../skills/SkillsGrid.astro";
+import Spinner from "../ui/Spinner.astro";
+import { getSkills } from "../../services/skills";
+import type { SKillsInterface } from "../../types/SkillsInterface";
+
+const skills: SKillsInterface[] = await getSkills();
+---
+
+<Section animation="section-reveal from-left">
+  <div class="flex flex-col gap-8">
+    <Title>Skills</Title>
+
+    <Text
+      >I enjoy working with modern tools and frameworks to create responsive and
+      engaging web experiences:
+    </Text>
+
+    {
+      skills ? (
+        <SkillsGrid skills={skills} />
+      ) : (
+        <div class="w-full flex items-center justify-center">
+          <Spinner />
+        </div>
+      )
+    }
+  </div>
+</Section>
