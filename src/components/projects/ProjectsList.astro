@@ -1,10 +1,14 @@
 ---
-import { projects } from "../../constants/projects";
+import { getProjects } from "../../services/projects";
 
 const { limit } = Astro.props;
+
+const projects = await getProjects();
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
+<div
+  class={`grid grid-cols-1 gap-4 w-full ${limit ? "md:grid-cols-3" : "md:grid-cols-2"}`}
+>
   {
     projects.slice(0, limit).map((project) => (
       <a
@@ -12,15 +16,29 @@ const { limit } = Astro.props;
         href={project.link}
         target="_blank"
       >
-        <img
-          src={project.src}
-          alt={`${project.name} Screenshot`}
-          class="w-full object-cover block"
-        />
+        {project.video ? (
+          <video
+            class="w-full object-cover block"
+            src={project.video}
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+          />
+        ) : (
+          <img
+            src={project.image}
+            alt={`${project.name} Screenshot`}
+            class="w-full object-cover block"
+          />
+        )}
         <div class="absolute inset-0 bg-dark/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <p class="py-2 px-10 bg-white/70 tracking-widest uppercase text-center">
-            Visit Site
-          </p>
+          {project.link && (
+            <p class="py-2 px-10 bg-white/70 tracking-widest uppercase text-center">
+              Visit Site
+            </p>
+          )}
         </div>
       </a>
     ))

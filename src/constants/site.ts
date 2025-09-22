@@ -1,4 +1,6 @@
-import { projects } from "./projects";
+import { getProjects } from "../services/projects";
+
+const projects = await getProjects();
 
 export const title = "Anna Hilla · Frontend Web Developer";
 export const description =
@@ -26,6 +28,8 @@ export const structuredData = {
     "@type": "CreativeWork",
     name: project.name,
     url: project.link,
-    description: project.description || ""
+    description: project.description || "",
+    video: project.video,
+    image: project.image
   }))
 };
