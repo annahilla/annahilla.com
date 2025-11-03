@@ -11,6 +11,19 @@ export const POST: APIRoute = async ({ request, redirect }) => {
   const name = form.get('name');
   const email = form.get('email');
   const message = form.get('message');
+  const honeypot = form.get("website");
+  const loadTime = Number(form.get("formLoadTime"));
+  const now = Date.now();
+
+  if (honeypot) {
+    console.warn("Bot detected (honeypot filled)");
+    return new Response("Bot detected", { status: 400 });
+  }
+
+    if (!loadTime || now - loadTime < 3000) {
+    console.warn("Bot detected (too fast)");
+    return new Response("Bot detected", { status: 400 });
+  }
 
   if (!name || !email || !message) {
         return new Response(

@@ -30,6 +30,14 @@ const inputStyles = "border py-2 px-4 w-full";
     placeholder="Message"
     class={`${inputStyles} h-46`}
     required></textarea>
+  <input
+    type="text"
+    name="website"
+    tabindex="-1"
+    autocomplete="off"
+    style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;"
+  />
+  <input type="hidden" name="formLoadTime" id="formLoadTime" />
 
   <p class="tracking-[0.15rem] italic" id="status-message"></p>
 
@@ -39,6 +47,10 @@ const inputStyles = "border py-2 px-4 w-full";
 <script type="module">
   const params = new URLSearchParams(window.location.search);
   const sent = params.get("sent");
+
+  const formLoadTimeEl = document.getElementById("formLoadTime");
+  formLoadTimeEl.value = Date.now();
+
   const p = document.getElementById("status-message");
   if (sent === "true") {
     p.textContent =
