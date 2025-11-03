@@ -14,15 +14,24 @@ export const POST: APIRoute = async ({ request, redirect }) => {
   const honeypot = form.get("website");
   const loadTime = Number(form.get("formLoadTime"));
   const now = Date.now();
+  const privacyAccepted = form.get("privacy");
+
 
   if (honeypot) {
     console.warn("Bot detected (honeypot filled)");
     return new Response("Bot detected", { status: 400 });
   }
 
-    if (!loadTime || now - loadTime < 3000) {
+  if (!loadTime || now - loadTime < 3000) {
     console.warn("Bot detected (too fast)");
     return new Response("Bot detected", { status: 400 });
+  }
+
+  if (!privacyAccepted) {
+    return new Response(
+      JSON.stringify({ message: "Privacy policy not accepted" }),
+      { status: 400 }
+    );
   }
 
   if (!name || !email || !message) {

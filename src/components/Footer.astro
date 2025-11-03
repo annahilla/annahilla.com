@@ -10,9 +10,13 @@ import Section from "./ui/Section.astro";
 <Section animation="section-reveal from-right">
   <div class="flex flex-col gap-4 items-center justify-center">
     <Logo />
-    <p class="tracking-widest text-center font-light text-xs md:text-md">
-      © Copyright 2025 · All rights reserved
-    </p>
+    <div
+      class="flex gap-4 tracking-widest text-center font-light text-xs md:text-md"
+    >
+      <p>© Copyright 2025 · All rights reserved</p>
+      <span>|</span>
+      <a href="/privacy-policy">Privacy Policy</a>
+    </div>
 
     <div class="flex gap-8 items-center md:mt-4">
       <a href={githubLink} target="_blank">
